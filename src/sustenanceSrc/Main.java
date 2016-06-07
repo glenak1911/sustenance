@@ -15,8 +15,7 @@ public class Main {
 					.header("Accept", "application/json")
 					.asJson();
 
-			System.out.print(response.
-					.getBody());
+			System.out.print(response.getBody());
 		} catch (UnirestException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
