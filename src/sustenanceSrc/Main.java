@@ -5,6 +5,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.*;
 import java.util.List;
 import java.util.Map;
+import org.json.*;
 
 public class Main {
 
@@ -14,8 +15,9 @@ public class Main {
 					.header("X-Mashape-Key", "yyss38ddAYmshKSQkToaZnu7Qd9Yp1OGXDfjsnpDe333h6xtq5")
 					.header("Accept", "application/json")
 					.asJson();
-
-			System.out.print(response.getBody());
+			
+			JSONObject json = new JSONObject(response.getBody());
+			System.out.print(json.toString(4));
 		} catch (UnirestException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
